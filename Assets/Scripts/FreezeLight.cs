@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FreezeLight : MonoBehaviour
 {
-    private Light light;
+    private BoxCollider col;
 
     void Awake()
     {
-        light = GetComponent<Light>();
+        col = GetComponent<BoxCollider>();
     }
     void OnEnable()
     {
@@ -18,6 +18,8 @@ public class FreezeLight : MonoBehaviour
         {
             PlayerController.instance.FreezePlayer();
         }
+        else{
+        }
     }
     void OnDisable()
     {
@@ -25,17 +27,6 @@ public class FreezeLight : MonoBehaviour
     }
     public bool PosInLight(Vector3 pos)
     {
-        if(Vector3.Distance(pos, light.transform.position) > light.range)
-        {
-            return false; 
-        }
-        else{
-            Vector3 dirToPlayer = (pos - light.transform.position).normalized;
-            if (Vector3.Angle(light.transform.forward, dirToPlayer) < light.spotAngle / 2)
-            {
-                return true;
-            }
-        }
-        return false;
+        return col.bounds.Contains(pos);
     }
 }
