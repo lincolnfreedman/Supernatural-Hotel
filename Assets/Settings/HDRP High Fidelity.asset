@@ -16,8 +16,8 @@ MonoBehaviour:
     supportShadowMask: 0
     supportSSR: 0
     supportSSRTransparent: 0
-    supportSSAO: 1
-    supportSSGI: 1
+    supportSSAO: 0
+    supportSSGI: 0
     supportSubsurfaceScattering: 1
     subsurfaceScatteringAttenuation: 1
     sssSampleBudget:
@@ -341,7 +341,7 @@ MonoBehaviour:
   availableMaterialQualityLevels: -1
   m_DefaultMaterialQualityLevel: 4
   diffusionProfileSettings: {fileID: 0}
-  m_VolumeProfile: {fileID: 0}
+  m_VolumeProfile: {fileID: 11400000, guid: a6852fff28f5546418762c73f1e06fe7, type: 2}
   virtualTexturingSettings:
     streamingCpuCacheSizeInMegaBytes: 256
     streamingMipPreloadTexturesPerFrame: 0
