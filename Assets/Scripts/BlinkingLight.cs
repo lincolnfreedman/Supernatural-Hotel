@@ -6,23 +6,33 @@ public class BlinkingLight : MonoBehaviour
     [SerializeField] float onDuration;
     [SerializeField] float offDuration;
     private bool isOn = false;
-    Light light;
+    GameObject light;
+    [SerializeField] private Animator anim;
+
     
     void Start()
     {
-        light = GetComponent<Light>();
+        light = transform.GetChild(0).gameObject;
         StartCoroutine(blinkRoutine());
     }
     IEnumerator blinkRoutine()
     {
         if (isOn)
         {
-            light.enabled = true;
+            light.SetActive(true);
+            if(anim != null)
+            {
+                anim.enabled = false;
+            }
             yield return new WaitForSeconds(onDuration);
         }
         else
         {
-            light.enabled = false;
+            light.SetActive(false);
+            if(anim != null)
+            {
+                anim.enabled = true;
+            }
             yield return new WaitForSeconds(offDuration);
         }
         isOn = !isOn;

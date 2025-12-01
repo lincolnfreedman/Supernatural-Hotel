@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4943751604136067482}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   maxPitch: 75
   moveSpeed: 0.1
   sensitivity: 1
+  currentInteractable: {fileID: 0}
 --- !u!114 &4943751604136067482
 MonoBehaviour:
   m_ObjectHideFlags: 0

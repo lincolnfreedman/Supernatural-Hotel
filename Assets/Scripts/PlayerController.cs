@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     float pitch = 0f;
     float yaw = 0f;
+    private bool frozen = false;
     Rigidbody rb;
     [SerializeField] Camera playerCamera;
 
@@ -17,8 +20,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxPitch = 75f;
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float sensitivity = 1f;
+    private FreezeLight[] freezeLights;
+    public Interactable currentInteractable;   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
         if (instance == null)
@@ -29,10 +34,12 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        freezeLights = FindObjectsByType<FreezeLight>(FindObjectsSortMode.None);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         input = GetComponent<PlayerInput>();
-
+        InputAction switchAction = input.actions["Interact"];
+        switchAction.performed += ctx => Interact();
     }
 
 
@@ -42,9 +49,16 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         AimCamera();
         MovePlayer();
+        if(currentInteractable != null)
+        {
+            Debug.Log("interactable not null");
+        }
     }
     void AimCamera()
     {
+        if(frozen) {
+            return;
+        }
         playerCamera.transform.position = transform.position + Vector3.up * 0.8f;
         lookInput = input.actions["Look"].ReadValue<Vector2>();
 
@@ -58,6 +72,9 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
+        if (frozen) {
+            return;
+        }
         moveInput = input.actions["Move"].ReadValue<Vector2>();
 
         Vector3 camForward = playerCamera.transform.forward;
@@ -68,9 +85,26 @@ public class PlayerController : MonoBehaviour
         camRight.Normalize();
 
         Vector3 posChange = camRight * moveInput.x + camForward * moveInput.y;
-        rb.MovePosition(rb.position + posChange * moveSpeed);
-
+        Vector3 newPos = rb.position + posChange * moveSpeed;
+        foreach (FreezeLight light in freezeLights)
+        {
+            if (!light.PosInLight(newPos) || light.gameObject.activeSelf == false)
+            {
+                rb.MovePosition(newPos);
+            }
+        }
         transform.rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, 0);
-
+    }
+    void Interact()
+    {
+        currentInteractable?.Interact();
+    }
+    public void FreezePlayer()
+    {
+        frozen = true;
+    }
+    public void UnfreezePlayer()
+    {
+        frozen = false;
     }
 }
