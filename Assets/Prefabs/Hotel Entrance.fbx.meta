@@ -3,7 +3,17 @@ guid: d21302d4f9667834f814c3853109a046
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: black_painted_planks_diff_4k
+    second: {fileID: 2800000, guid: af4ff4013b4fa444aaa2dcff03e01cc2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rosewood_veneer1_diff_4k
+    second: {fileID: 2800000, guid: 599213cd5d54b1843ba7c74df40b7e1d, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,12 @@ guid: 1b2b1a02fca91a7449d34a89b58e6f83
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: drkwood
+    second: {fileID: 2800000, guid: 281990d6b2486594d80837cd15f0973c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
