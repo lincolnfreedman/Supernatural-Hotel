@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class ControlPanel : Interactable
 {
-    [SerializeField] GameObject lightContainer;
     [SerializeField] GameObject interactPrompt;
     [SerializeField] AudioClip switchSound;
     [SerializeField] AudioClip screechSound;
@@ -35,7 +34,15 @@ public class ControlPanel : Interactable
         switch (pressCount)
         {
             case 0:
-                lightContainer.SetActive(!lightContainer.activeSelf);
+                foreach(FreezeLight light in PlayerController.instance.freezeLights)
+                {
+                    light.gameObject.SetActive(false);
+                }
+                BlinkingLight[] blinkingLights = FindObjectsByType<BlinkingLight>(FindObjectsSortMode.None);
+                foreach(BlinkingLight blink in blinkingLights)
+                {
+                    blink.EndBlinking();
+                }
                 AudioSource.PlayClipAtPoint(switchSound, transform.position);
                 pressCount++;
                 text = "Press E to flip the kitchen switch";

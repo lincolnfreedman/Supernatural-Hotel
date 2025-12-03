@@ -47,4 +47,16 @@ public class BlinkingLight : MonoBehaviour
         isOn = !isOn;
         StartCoroutine(blinkRoutine());
     }
+    public void EndBlinking()
+    {
+        if(anim != null && !anim.enabled)
+        {
+            anim.enabled = true;
+        }
+        if(clockSource != null && !clockSource.isPlaying)
+        {
+            clockSource.Play();
+        }
+        StopAllCoroutines();
+    }
 }

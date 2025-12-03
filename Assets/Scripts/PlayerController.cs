@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float sensitivity = 1f;
     public bool hasKey = false;
-    private FreezeLight[] freezeLights;
+    public FreezeLight[] freezeLights;
     public Interactable currentInteractable;   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()

@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: b82e6235e201342498ecd82a7538e82c
+guid: 10076e22b86fd3f499a90e0ab245c01a
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood_table_worn_diff_4k
+    second: {fileID: 2800000, guid: a721c49a8adba9e4daa31f529eef2d4d, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
