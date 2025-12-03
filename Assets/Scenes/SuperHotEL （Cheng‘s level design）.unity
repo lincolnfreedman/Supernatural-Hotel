@@ -1737,7 +1737,7 @@ Transform:
   m_GameObject: {fileID: 66953543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -3.602, y: -4.053, z: 3.283}
+  m_LocalPosition: {x: -3.602, y: -4.053, z: 3.331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4924,6 +4924,33 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &159357574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: d21302d4f9667834f814c3853109a046, type: 3}
+  m_PrefabInstance: {fileID: 1288737052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &159357578
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159357574}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: d21302d4f9667834f814c3853109a046, type: 3}
 --- !u!1 &169897997
 GameObject:
   m_ObjectHideFlags: 0
@@ -30645,6 +30672,33 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1007879808 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1502877291743220047, guid: d21302d4f9667834f814c3853109a046, type: 3}
+  m_PrefabInstance: {fileID: 1288737052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1007879812
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007879808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2865104911859505335, guid: d21302d4f9667834f814c3853109a046, type: 3}
 --- !u!1 &1011044190
 GameObject:
   m_ObjectHideFlags: 0
@@ -42192,7 +42246,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8391222552659086748, guid: d21302d4f9667834f814c3853109a046, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 159357578}
+    - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: d21302d4f9667834f814c3853109a046, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1917066286}
+    - targetCorrespondingSourceObject: {fileID: 1502877291743220047, guid: d21302d4f9667834f814c3853109a046, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1007879812}
   m_SourcePrefab: {fileID: 100100000, guid: d21302d4f9667834f814c3853109a046, type: 3}
 --- !u!43 &1292753772
 Mesh:
@@ -75558,6 +75621,33 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1917066282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: d21302d4f9667834f814c3853109a046, type: 3}
+  m_PrefabInstance: {fileID: 1288737052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1917066286
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917066282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: d21302d4f9667834f814c3853109a046, type: 3}
 --- !u!1 &1941781932
 GameObject:
   m_ObjectHideFlags: 0
