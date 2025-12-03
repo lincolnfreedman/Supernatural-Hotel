@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxPitch = 75f;
     [SerializeField] float moveSpeed = 0.1f;
     [SerializeField] float sensitivity = 1f;
+    public bool hasKey = false;
     private FreezeLight[] freezeLights;
     public Interactable currentInteractable;   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -86,12 +87,18 @@ public class PlayerController : MonoBehaviour
 
         Vector3 posChange = camRight * moveInput.x + camForward * moveInput.y;
         Vector3 newPos = rb.position + posChange * moveSpeed;
+        bool inLight = false;
         foreach (FreezeLight light in freezeLights)
         {
-            if (!light.PosInLight(newPos) || light.gameObject.activeSelf == false)
+            Debug.Log("Checking light");
+            if (light.PosInLight(newPos) && light.gameObject.activeSelf == true)
             {
-                rb.MovePosition(newPos);
+                inLight = true;
             }
+        }
+        if (!inLight)
+        {
+            rb.MovePosition(newPos);
         }
         transform.rotation = Quaternion.Euler(0, playerCamera.transform.eulerAngles.y, 0);
     }

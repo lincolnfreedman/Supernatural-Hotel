@@ -1,18 +1,17 @@
 using UnityEngine;
 using TMPro;
 
-public class LightSwitch : Interactable
-{
-    [SerializeField] GameObject lightContainer;
-    [SerializeField] GameObject interactPrompt;
-    [SerializeField] AudioClip switchSound;
 
+public class Bell : Interactable
+{
+    [SerializeField] GameObject interactPrompt;
+    [SerializeField] AudioClip bellSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             interactPrompt.SetActive(true);
-            interactPrompt.GetComponentsInChildren<TextMeshProUGUI>()[0].text = "Press E to flip the light switch";
+            interactPrompt.GetComponentsInChildren<TextMeshProUGUI>()[0].text = "Press E to ring the bell";
             PlayerController.instance.currentInteractable = this;
         }
     }
@@ -29,7 +28,6 @@ public class LightSwitch : Interactable
     }
     public override void Interact()
     {
-        lightContainer.SetActive(!lightContainer.activeSelf);
-        AudioSource.PlayClipAtPoint(switchSound, transform.position);
+        AudioSource.PlayClipAtPoint(bellSound, transform.position);
     }
 }

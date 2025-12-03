@@ -8,6 +8,7 @@ public class BlinkingLight : MonoBehaviour
     private bool isOn = false;
     GameObject light;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource clockSource;
 
     
     void Start()
@@ -24,6 +25,10 @@ public class BlinkingLight : MonoBehaviour
             {
                 anim.enabled = false;
             }
+            if(clockSource != null)
+            {
+                clockSource.Pause();
+            }
             yield return new WaitForSeconds(onDuration);
         }
         else
@@ -32,6 +37,10 @@ public class BlinkingLight : MonoBehaviour
             if(anim != null)
             {
                 anim.enabled = true;
+            }
+            if(clockSource != null)
+            {
+                clockSource.Play();
             }
             yield return new WaitForSeconds(offDuration);
         }

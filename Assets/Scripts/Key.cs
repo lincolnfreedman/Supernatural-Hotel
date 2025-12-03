@@ -1,18 +1,16 @@
 using UnityEngine;
 using TMPro;
 
-public class LightSwitch : Interactable
+public class Key : Interactable
 {
-    [SerializeField] GameObject lightContainer;
     [SerializeField] GameObject interactPrompt;
-    [SerializeField] AudioClip switchSound;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             interactPrompt.SetActive(true);
-            interactPrompt.GetComponentsInChildren<TextMeshProUGUI>()[0].text = "Press E to flip the light switch";
+            interactPrompt.GetComponentsInChildren<TextMeshProUGUI>()[0].text = "Press E to pick up the key";
             PlayerController.instance.currentInteractable = this;
         }
     }
@@ -29,7 +27,9 @@ public class LightSwitch : Interactable
     }
     public override void Interact()
     {
-        lightContainer.SetActive(!lightContainer.activeSelf);
-        AudioSource.PlayClipAtPoint(switchSound, transform.position);
+        PlayerController.instance.currentInteractable = null;
+        Destroy(gameObject);
+        interactPrompt.SetActive(false);
+        PlayerController.instance.hasKey = true;
     }
 }
