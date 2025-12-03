@@ -81828,6 +81828,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5602584345045777881, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3430965ca8b6abb40b05353ef30410c6, type: 2}
+    - target: {fileID: 5728665863280423786, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3430965ca8b6abb40b05353ef30410c6, type: 2}
+    - target: {fileID: 5957420926188435126, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3430965ca8b6abb40b05353ef30410c6, type: 2}
     - target: {fileID: 9012754095141665129, guid: b824bfb0ce5f65f48943b9491d73b3cc, type: 3}
       propertyPath: m_Name
       value: Decorations
