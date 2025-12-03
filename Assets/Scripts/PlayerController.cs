@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,10 +10,11 @@ public class PlayerController : MonoBehaviour
     Vector2 lookInput;
     float pitch = 0f;
     float yaw = 0f;
-    private bool frozen = false;
+    private bool frozen = true;
     Rigidbody rb;
     [SerializeField] Camera playerCamera;
-
+    [SerializeField] GameObject interactText;
+    [SerializeField] GameObject letter;
     [SerializeField] float minPitch = -45f;
     [SerializeField] float maxPitch = 75f;
     [SerializeField] float moveSpeed = 0.1f;
@@ -104,6 +103,13 @@ public class PlayerController : MonoBehaviour
     }
     void Interact()
     {
+        if(letter.activeSelf)
+        {
+            letter.SetActive(false);
+            interactText.SetActive(false);
+            frozen = false;
+            return;
+        }
         currentInteractable?.Interact();
     }
     public void FreezePlayer()

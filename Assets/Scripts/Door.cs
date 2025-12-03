@@ -37,6 +37,7 @@ public class Door : Interactable
     {
         if(PlayerController.instance.hasKey)
         {
+            PlayerController.instance.FreezePlayer();
             endText.SetActive(true);
         }
     }

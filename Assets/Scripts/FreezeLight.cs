@@ -23,7 +23,8 @@ public class FreezeLight : MonoBehaviour
     }
     void OnDisable()
     {
-        PlayerController.instance.UnfreezePlayer();
+        if(PosInLight(PlayerController.instance.transform.position))
+            PlayerController.instance.UnfreezePlayer();
     }
     public bool PosInLight(Vector3 pos)
     {
