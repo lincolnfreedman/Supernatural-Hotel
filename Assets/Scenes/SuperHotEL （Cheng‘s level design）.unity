@@ -60578,10 +60578,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 211699913428779384, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65eb02a5b89ee664baa0a4c3ace61936, type: 2}
     - target: {fileID: 2083598256154642153, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 894274665}
+    - target: {fileID: 2133995874278820375, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65eb02a5b89ee664baa0a4c3ace61936, type: 2}
+    - target: {fileID: 2296086457916032164, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65eb02a5b89ee664baa0a4c3ace61936, type: 2}
+    - target: {fileID: 6217288274095388070, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 65eb02a5b89ee664baa0a4c3ace61936, type: 2}
     - target: {fileID: 7316402139937660472, guid: c820d2a113af54c439e2d6650890efb3, type: 3}
       propertyPath: m_Name
       value: light control panel (1)
