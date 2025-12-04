@@ -43,6 +43,7 @@ public class ControlPanel : Interactable
                 {
                     blink.EndBlinking();
                 }
+                PlayerController.instance.powerOff = true;
                 AudioSource.PlayClipAtPoint(switchSound, transform.position);
                 pressCount++;
                 text = "Press E to flip the kitchen switch";

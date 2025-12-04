@@ -29,7 +29,10 @@ public class LightSwitch : Interactable
     }
     public override void Interact()
     {
-        lightContainer.SetActive(!lightContainer.activeSelf);
+        if (!PlayerController.instance.powerOff)
+        {
+            lightContainer.SetActive(!lightContainer.activeSelf);       
+        }
         AudioSource.PlayClipAtPoint(switchSound, transform.position);
     }
 }
